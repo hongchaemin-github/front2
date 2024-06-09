@@ -1,0 +1,82 @@
+.guestbook {
+  margin-top: 20px;
+  background-color: #c5f1ff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* 크기 키우기 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.guestbook h2 {
+  text-align: center;
+}
+
+#guestbook-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#guestbook-form input,
+#guestbook-form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.2em; /* 글자 크기 키우기 */
+}
+
+#guestbook-form input {
+  height: 40px; /* 입력 필드 높이 키우기 */
+}
+
+#guestbook-form textarea {
+  resize: vertical;
+  height: 100px; /* 텍스트 영역 높이 키우기 */
+}
+
+#guestbook-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2em; /* 글자 크기 키우기 */
+}
+
+#guestbook-form button:hover {
+  background-color: #ffffff;
+}
+
+#guestbook-entries {
+  margin-top: 20px;
+}
+
+.entry {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  position: relative;
+  font-size: 1.2em; /* 글자 크기 키우기 */
+}
+
+.entry:last-child {
+  border-bottom: none;
+}
+
+.entry .name {
+  font-weight: bold;
+}
+
+.entry .delete-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgb(255, 163, 163);
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
