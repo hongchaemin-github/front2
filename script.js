@@ -1,5 +1,4 @@
-const BACKEND_URL = 'http://http://34.236.9.92/:8080'; // 실제 백엔드 서버의 주소로 변경하세요
-
+const BACKEND_URL = 'http://http://34.236.9.92/:8080';
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("guestbook-form");
     const nameInput = document.getElementById("name");
