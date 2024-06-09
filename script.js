@@ -1,3 +1,5 @@
+const BACKEND_URL = 'http://http://34.236.9.92/:8080'; // 실제 백엔드 서버의 주소로 변경하세요
+
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("guestbook-form");
     const nameInput = document.getElementById("name");
@@ -14,6 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
             addEntry(name, message);
             nameInput.value = "";
             messageInput.value = "";
+
+            // 백엔드 서버로 데이터 전송
+            sendDataToBackend(name, message);
         }
     });
 
@@ -41,5 +46,27 @@ document.addEventListener("DOMContentLoaded", function () {
         entryDiv.appendChild(deleteButton);
 
         entriesDiv.appendChild(entryDiv);
+    }
+
+    function sendDataToBackend(name, message) {
+        const url = BACKEND_URL + '/api/guestbook';
+
+        const data = { name: name, message: message };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
     }
 });
